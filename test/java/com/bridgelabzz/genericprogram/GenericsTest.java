@@ -4,8 +4,8 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class GenericsTest {
-Generics max=new Generics();
-	
+	Generics max = new Generics();
+
 	@Test
 	public void givenThreeNumberWhenIntegerNumberShouldReturnMaxAtFirstPosition() {
 		int value = max.findMax(9, 5, 6);
@@ -24,5 +24,21 @@ Generics max=new Generics();
 		Assert.assertEquals(9, value);
 	}
 
+	@Test
+	public void givenThreeNumberWhenFloatNumberShouldReturnMaxAtFirstPosition() {
+		float value = max.findMax(9.0f, 5.0f, 6.0f);
+		Assert.assertEquals(9.0f, value, 0.0f);
+	}
 
+	@Test
+	public void givenThreeNumberWhenFloatNumberShouldReturnMaxSecoundPosition() {
+		float value = max.findMax(5.0f, 9.0f, 6.0f);
+		Assert.assertEquals(9.0f, value, 0.0f);
+	}
+
+	@Test
+	public void givenThreeNumberWhenFloatNumberShouldReturnMaxThirdPosition() {
+		float value = max.findMax(9.0f, 5.0f, 11.0f);
+		Assert.assertEquals(11.0f, value, 0.0f);
+	}
 }
